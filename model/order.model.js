@@ -1,7 +1,6 @@
 const { Schema } = require("mongoose");
 
 const orderSchema = new Schema ({
-    _id: Schema.Types.ObjectId,
     cart_item: [{
         product: Schema.Types.ObjectId,
         variantId: Schema.Types.ObjectId,
