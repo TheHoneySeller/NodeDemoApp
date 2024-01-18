@@ -1,6 +1,6 @@
 const { Schema } = require("mongoose");
 
-const parentProductSchema = new Schema ({
+const orderSchema = new Schema ({
     _id: Schema.Types.ObjectId,
     cart_item: [{
         product: Schema.Types.ObjectId,
