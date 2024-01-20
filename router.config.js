@@ -1,4 +1,5 @@
-const supplierPanelController = require(/controller/supplierPanel.controller)
+const supplierPanelController = require('./controller/supplierPanel.controller')
+
 
 exports.routerConfig = function (app) {
     app.get('/monthlysales', [

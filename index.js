@@ -1,7 +1,11 @@
-const router = require('router.config')
-const config = require("env.config")
+const router = require('./router.config')
+const config = require("./env.config")
 
 const express = require('express')
+
+//import exported data if available 
+
+
 const app = express()
 
 app.use(express.json())
