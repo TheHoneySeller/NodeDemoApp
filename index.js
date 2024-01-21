@@ -1,10 +1,11 @@
 const router = require('./router.config')
 const config = require("./env.config")
 
+const mongooseService = require('./services/mongoose.service')
+
 const express = require('express')
 
-//import exported data if available 
-
+mongooseService.connectToMongoDB()
 
 const app = express()
 

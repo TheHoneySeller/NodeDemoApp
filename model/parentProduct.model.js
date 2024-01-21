@@ -7,8 +7,3 @@ const parentProductSchema = new Schema({
 })
 
 const ParentProduct = mongoose.model('ParentProduct', parentProductSchema)
-
-exports.createParentProductFromExport = function(parentProductData) {
-    const newParentProduct = new ParentProduct(parentProductData)
-    return newParentProduct.save()
-}

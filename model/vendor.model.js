@@ -7,7 +7,3 @@ const vendorSchema = new Schema({
 
 const Vendor = mongoose.model('Vendor', vendorSchema)
 
-exports.createVendorFromExport = function(vendorData) {
-    const newVendor = new Vendor(vendorData)
-    return newVendor.save()
-}
