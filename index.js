@@ -12,4 +12,4 @@ const app = express()
 app.use(express.json())
 router.routerConfig(app)
 
-app.listen(config.port)
+app.listen(config.PORT, () => console.log("Listening on port: %d", config.PORT))

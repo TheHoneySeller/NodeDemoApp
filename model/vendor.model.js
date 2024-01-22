@@ -7,3 +7,6 @@ const vendorSchema = new Schema({
 
 const Vendor = mongoose.model('Vendor', vendorSchema)
 
+exports.getAllVendors = function() {
+    return Vendor.find({})
+}
