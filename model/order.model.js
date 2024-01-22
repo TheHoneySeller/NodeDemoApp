@@ -29,3 +29,19 @@ exports.getMonthlySales = function(productIds) {
     ])
 }
 
+exports.getTotalSalesByProduct = function(productIds) {
+    return Order.aggregate([
+        { $unwind: { path: '$cart_item' } },
+        { $match: { 'cart_item.product': { $in: productIds } } },
+        { $project: { quantity: '$cart_item.quantity', productId: '$cart_item.product' } },
+        { $group: { _id: '$productId',
+                    total_sales: {$sum: '$quantity'}} },
+        { $lookup: {
+            from: 'parentproducts',
+            localField: '_id',
+            foreignField: '_id',
+            as: 'product'
+        } }
+    ])
+}
+

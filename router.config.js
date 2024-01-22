@@ -6,7 +6,7 @@ exports.routerConfig = function (app) {
         //to do: security middleware
         supplierPanelController.getMonthlySales
     ])
-    app.get('totalproductsales', [
+    app.get('/totalproductsales', [
         //to do: Security middleware
         supplierPanelController.getTotalProductSales
     ])

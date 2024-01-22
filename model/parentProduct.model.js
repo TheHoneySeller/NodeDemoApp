@@ -12,6 +12,6 @@ exports.getAllParentProducts = function () {
     return ParentProduct.find({})
 }
 
-exports.findProductIdsOfVendor = function (vendorId) {
+exports.findProductsOfVendor = function (vendorId) { 
     return ParentProduct.find({ vendor: vendorId })
 }

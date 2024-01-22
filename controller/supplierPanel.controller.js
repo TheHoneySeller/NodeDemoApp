@@ -4,7 +4,7 @@ const ParentProductModel = require("../model/parentProduct.model")
 
 
 exports.getMonthlySales = function(request, response) {
-    ParentProductModel.findProductIdsOfVendor(request.query.vendorId).then( (result, error) => {
+    ParentProductModel.findProductsOfVendor(request.query.vendorId).then( (result, error) => {
         if (error) {
             console.log(error)
         } else {
@@ -22,6 +22,20 @@ exports.getMonthlySales = function(request, response) {
 
 }
 
-exports.getTotalProductSales = function() {
+exports.getTotalProductSales = function(request, response) {
+    ParentProductModel.findProductsOfVendor(request.query.vendorId).then( (result, error) => {
+        if (error) {
+            console.log(error)
+        } else {
+            productIds = result.map( (o) => o._id)
 
+            OrderModel.getTotalSalesByProduct(productIds).then( (resultInner, errorInner) => {
+                if (errorInner) {
+                    console.log(errorInner)
+                } else {
+                    response.status(200).send(resultInner)
+                }
+            } )
+        }
+    } )
 }
