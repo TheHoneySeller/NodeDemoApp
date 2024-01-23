@@ -1,13 +1,17 @@
 const router = require('./router.config')
 const config = require("./env.config")
 
+
 const mongooseService = require('./services/mongoose.service')
 
 const express = require('express')
+const cors = require('cors')
 
 mongooseService.connectToMongoDB()
 
 const app = express()
+
+app.use(cors())
 
 app.use(express.json())
 router.routerConfig(app)

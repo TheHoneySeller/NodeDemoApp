@@ -15,3 +15,7 @@ exports.getAllParentProducts = function () {
 exports.findProductsOfVendor = function (vendorId) { 
     return ParentProduct.find({ vendor: vendorId })
 }
+
+exports.exists = function (vendorId) {
+    return ParentProduct.exists({_id: vendorId})
+}
