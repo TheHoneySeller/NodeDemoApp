@@ -28,6 +28,19 @@
   color: #61dafb;
 }
 
+.vendor-form {
+  height: 10vh;
+}
+
+.product-table {
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.sales-chart {
+  height: 40vh;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
