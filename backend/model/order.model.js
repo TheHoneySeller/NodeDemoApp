@@ -25,7 +25,8 @@ exports.getMonthlySales = function(productIds) {
         { $match: { 'cart_item.product': { $in: productIds } } },
         { $project: { quantity: '$cart_item.quantity', year: {$year: '$payment_at'}, month: {$month: '$payment_at'} } },
         { $group: { _id: { year: '$year', month: '$month' }, 
-                    total_sales_month: {$sum: '$quantity'} } }
+                    total_sales_month: {$sum: '$quantity'} } },
+        { $sort: { '_id.year': 1, '_id.month': 1 } }
     ])
 }
 
